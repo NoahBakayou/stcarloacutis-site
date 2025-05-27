@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "stcarloacutis.net | Digital Shrine of Carlo Acutis",
-  description: "A reverent, accessible digital sanctuary honoring Carlo Acutis. Biography, Eucharistic miracles, media, prayers, and resources for faith and technology.",
+  title: "stcarloacutis.net | Eucharistic Miracles & Legacy of Carlo Acutis",
+  description: "Discover the life, faith, and Eucharistic miracles shared by Carlo Acutis.",
 };
 
 export default function RootLayout({
@@ -24,6 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/eucharist.png" type="image/png" />
+        <meta property="og:image" content="/eucharist.png" />
+        <meta name="twitter:image" content="/eucharist.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
