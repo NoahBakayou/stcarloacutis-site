@@ -34,6 +34,8 @@ export default function Home() {
         viewer.scene.backgroundColor = Cesium.Color.fromCssColorString("#f3f4f6");
         viewer.scene.skyBox.show = false;
         viewer.scene.skyAtmosphere.show = false;
+        viewer.scene.sun.show = false;
+        viewer.scene.moon.show = false;
         (window as any).__CESIUM_VIEWER__ = viewer;
         // Set initial camera view: more zoomed in on mobile, desktop unchanged
         if (window.innerWidth < 768) { // Tailwind's md breakpoint
