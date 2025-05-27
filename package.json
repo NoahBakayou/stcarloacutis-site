@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/mapbox-gl": "^3.4.1",
+    "cesium": "^1.129.0"
+  }
+}
