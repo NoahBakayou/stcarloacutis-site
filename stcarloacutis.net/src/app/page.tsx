@@ -297,11 +297,18 @@ export default function Home() {
         </div>
         {/* Mobile: single-line instructions */}
         <div className="block sm:hidden text-center mb-4">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Eucharistic Miracles Worldwide</h2>
-          <div className="text-gray-600 text-base mb-2">Carlo Acutis built a website to share Eucharistic miracles. Tap a marker to open his site.</div>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            Eucharistic Miracles Worldwide
+          </h2>
+          <div className="text-gray-600 text-base mb-2">
+            St. Carlo Acutis built a website to share Eucharistic miracles. Tap a marker to open his site.
+          </div>
         </div>
         <div className="w-full max-w-5xl h-56 md:h-96 bg-gray-100 border border-gray-200 flex items-center justify-center mb-4 rounded-xl overflow-hidden">
           <div id="cesiumContainer" className="w-full h-full rounded-xl" style={{ minHeight: 224 }}></div>
+        </div>
+        <div className="block sm:hidden text-gray-400 text-sm text-center mb-2">
+          Swipe, pinch to zoom, or rotate the globe to explore.
         </div>
       </section>
 
@@ -330,7 +337,7 @@ export default function Home() {
             </form>
           </div>
           <div className="max-w-lg min-w-[400px] w-full mr-[-4] aspect-video bg-gray-100 border border-gray-200 rounded-xl overflow-hidden flex flex-col items-center justify-center">
-            <div className="w-full text-center text-gray-600 text-sm font-medium mb-2">Live Stream of St Carlo Acutis' Tomb</div>
+            <div className="w-full text-center text-gray-600 text-sm font-medium mb-2">Live Stream of St. Carlo Acutis' Tomb</div>
             <iframe
               width="100%"
               height="100%"
@@ -344,6 +351,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      </main>
+    </main>
   );
 }
