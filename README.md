@@ -1,4 +1,4 @@
-# Bl. Carlo Acutis Eucharistic Miracles Website
+# St. Carlo Acutis Eucharistic Miracles Website
 
 Created this website dedicated to **St. Carlo Acutis** and the **Eucharistic miracles** he documented.
 
