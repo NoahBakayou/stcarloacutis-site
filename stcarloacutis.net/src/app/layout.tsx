@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "stcarloacutis.net | Eucharistic Miracles & Legacy of Carlo Acutis",
-  description: "Discover the life, faith, and Eucharistic miracles shared by Carlo Acutis.",
+  title: "stcarloacutis.net | Eucharistic Miracles & Legacy of St. Carlo Acutis",
+  description: "Discover the life, faith, and Eucharistic miracles shared by St. Carlo Acutis.",
 };
 
 export default function RootLayout({
