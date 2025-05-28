@@ -1,9 +1,9 @@
-name: Send Daily Prayer Intentions
+name: Send Weekly Prayer Intentions
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
-  workflow_dispatch:     # Allows manual trigger from GitHub UI
+    - cron: '0 15 * * 0' # Every Sunday at 15:00 UTC (8 AM California time during DST)
+  workflow_dispatch:
 
 jobs:
   send-intentions:
@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ./stcarloacutis.net
 
       - name: Run sendIntentions script
         env:
@@ -28,3 +29,4 @@ jobs:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: npx ts-node sendIntentions.ts
+        working-directory: ./stcarloacutis.net
