@@ -23,10 +23,11 @@ jobs:
 
       - name: Run sendIntentions script
         env:
+          NODE_PATH: ${{ github.workspace }}/stcarloacutis.net/node_modules
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: npx ts-node --compiler-options '{"module":"CommonJS"}' scripts/sendIntentions.ts
+        run: ../stcarloacutis.net/node_modules/.bin/ts-node --compiler-options '{"module":"CommonJS"}' scripts/sendIntentions.ts
         working-directory: .
