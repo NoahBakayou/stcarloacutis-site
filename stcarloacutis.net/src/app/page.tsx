@@ -317,11 +317,41 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Prayer Intentions</h2>
         <div className="flex flex-col md:flex-row items-start justify-center gap-1 w-full">
           <div className="max-w-lg min-w-[400px] w-full ml-[-4]">
-            <form className="w-full max-w-md flex flex-col gap-4 bg-gray-50 border border-gray-200 p-6" style={{ borderRadius: 12 }}>
+            <form
+              className="w-full max-w-md flex flex-col gap-4 bg-gray-50 border border-gray-200 p-6"
+              style={{ borderRadius: 12 }}
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const data = {
+                  name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
+                  email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
+                  intention: (form.elements.namedItem("intention") as HTMLTextAreaElement)?.value,
+                };
+                const res = await fetch("/api/prayer-intention", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+                if (res.ok) {
+                  alert("Thank you for your prayer intention!");
+                  form.reset();
+                } else {
+                  alert("There was an error. Please try again.");
+                }
+              }}
+            >
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name (optional)"
+                className="px-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none"
+                autoComplete="off"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email (optional)"
                 className="px-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none"
                 autoComplete="off"
               />
