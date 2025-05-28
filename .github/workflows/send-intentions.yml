@@ -28,5 +28,5 @@ jobs:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: npx ts-node scripts/sendIntentions.ts
+        run: npx ts-node --compiler-options '{"module":"CommonJS"}' scripts/sendIntentions.ts
         working-directory: .
