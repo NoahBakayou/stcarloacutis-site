@@ -44,7 +44,7 @@ export default function Home() {
           });
         } else {
           viewer.camera.setView({
-            destination: Cesium.Cartesian3.fromDegrees(-100, 40, 25000000), // desktop zoom
+            destination: Cesium.Cartesian3.fromDegrees(-100, 40, 15000000), // desktop zoom, more zoomed in
           });
         }
         // Remove the old California marker and add all provided miracles
@@ -257,22 +257,54 @@ export default function Home() {
               <div className="text-center text-gray-500 text-sm mt-2">Tap to play video.</div>
             </div>
             {/* Desktop: show the bio bullet points */}
-            <ul className="hidden md:block text-base md:text-lg leading-relaxed text-gray-800 space-y-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              <li><span className="font-semibold">St. Carlo Acutis (1991–2006):</span> Teenage computer genius from Milan, Italy.</li>
-              <li>Known for his big smile, kindness, and sense of humor.</li>
-              <li>Loved the Eucharist, soccer, video games, and animals.</li>
-              <li>Built a website at 14 cataloging Eucharistic miracles worldwide.</li>
-              <li>Helped classmates, stood up for bullied students, and volunteered for charities.</li>
-              <li>Went to Mass daily, prayed the rosary, and gave to the poor.</li>
-              <li>Lived with joy, purpose, and a contagious love for God.</li>
-              <li>Died of leukemia at age 15; buried in his favorite Nike sneakers and jeans.</li>
-              <li><span className="font-semibold">Beatified:</span> October 10, 2020, after a Brazilian boy with a rare pancreatic disorder was healed through Carlo's intercession.</li>
-              <li><span className="font-semibold">Second miracle (2022):</span> A Costa Rican girl recovered from a severe head injury after her mother prayed at Carlo's tomb.</li>
-              <li><span className="font-semibold">Canonization:</span> Scheduled for 2025—Carlo will become the Catholic Church's first millennial saint.</li>
+            <ul className="hidden md:block md:list-disc md:pl-5 text-base md:text-lg leading-relaxed text-gray-800 space-y-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <li><span className="font-semibold">St. Carlo Acutis (1991–2006)</span>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Teen computer prodigy from Milan, Italy.</li>
+                  <li>Known for his joy, kindness, and deep faith.</li>
+                  <li>Faith and Service:
+                    <ul className="list-disc pl-5">
+                      <li>Attended Mass daily and prayed the rosary.</li>
+                      <li>Stood up for others, helped classmates, and gave to the poor.</li>
+                    </ul>
+                  </li>
+                  <li>Personal Life:
+                    <ul className="list-disc pl-5">
+                      <li>Loved soccer, video games, animals, and spending time with friends.</li>
+                      <li>Lived with purpose and a contagious love for God.</li>
+                      <li>Died of leukemia at 15, buried in his favorite sneakers and jeans.</li>
+                    </ul>
+                  </li>
+                  <li>Achievements:
+                    <ul className="list-disc pl-5">
+                      <li>Created a website at 14 cataloging Eucharistic miracles worldwide.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><span className="font-semibold">Path to Sainthood</span>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li><span className="font-semibold">Beatified (2020):</span>
+                    <ul className="list-disc pl-5">
+                      <li>Miracle healing of a Brazilian boy through Carlo’s intercession.</li>
+                    </ul>
+                  </li>
+                  <li><span className="font-semibold">Second Miracle (2022):</span>
+                    <ul className="list-disc pl-5">
+                      <li>Costa Rican girl recovered after prayers at his tomb.</li>
+                    </ul>
+                  </li>
+                  <li><span className="font-semibold">Canonization:</span>
+                    <ul className="list-disc pl-5">
+                      <li>Scheduled for <span className="font-semibold">September 7, 2025</span>—Carlo will become the Catholic Church’s first millennial saint.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
           {/* On desktop, show the video next to the bio */}
-          <div className="hidden md:flex flex-1 w-full max-w-[280px] aspect-[9/16] bg-gray-100 border border-gray-200 items-center justify-center rounded-xl overflow-hidden ml-[-10px]">
+          <div className="hidden md:flex flex-1 w-full max-w-[340px] aspect-[9/16] bg-gray-100 border border-gray-200 items-center justify-center rounded-xl overflow-hidden ml-[-10px] self-center">
             <iframe
               width="100%"
               height="100%"
@@ -304,7 +336,7 @@ export default function Home() {
             St. Carlo Acutis built a website to share Eucharistic miracles. Tap a marker to open his site.
           </div>
         </div>
-        <div className="w-full max-w-5xl h-56 md:h-96 bg-gray-100 border border-gray-200 flex items-center justify-center mb-4 rounded-xl overflow-hidden">
+        <div className="w-full max-w-5xl h-80 md:h-[600px] bg-gray-100 border border-gray-200 flex items-center justify-center mb-4 rounded-xl overflow-hidden">
           <div id="cesiumContainer" className="w-full h-full rounded-xl" style={{ minHeight: 224 }}></div>
         </div>
         <div className="block sm:hidden text-gray-400 text-sm text-center mb-2">
@@ -371,7 +403,7 @@ export default function Home() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/watch?v=Q2jVG3YEXz8"
+              src="https://www.youtube.com/embed/Q2jVG3YEXz8"
               title="Live Stream Carlo Acutis Tomb"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
