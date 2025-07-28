@@ -246,7 +246,7 @@ export default function Home() {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/dPvQBjSu1Is"
+                  src="https://www.youtube.com/embed/oR3-6_ZVbH8"
                   title="Carlo Acutis YouTube Short"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -308,7 +308,7 @@ export default function Home() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/dPvQBjSu1Is"
+              src="https://www.youtube.com/embed/oR3-6_ZVbH8"
               title="Carlo Acutis YouTube Short"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
