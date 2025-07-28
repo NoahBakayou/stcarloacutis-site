@@ -272,7 +272,7 @@ export default function Home() {
                     <ul className="list-disc pl-5">
                       <li>Loved soccer, video games, animals, and spending time with friends.</li>
                       <li>Lived with purpose and a contagious love for God.</li>
-                      <li>Died of leukemia at 15, buried in his favorite sneakers and jeans.</li>
+                      <li>Died of leukemia at 15, buried in his Nike sneakers and jeans.</li>
                     </ul>
                   </li>
                   <li>Achievements:
