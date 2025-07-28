@@ -286,12 +286,12 @@ export default function Home() {
                 <ul className="list-disc pl-5 space-y-1">
                   <li><span className="font-semibold">Beatified (2020):</span>
                     <ul className="list-disc pl-5">
-                      <li>Miracle healing of a Brazilian boy through Carlo’s intercession.</li>
+                      <li>A Brazilian boy born with a severe pancreatic defect was miraculously healed after prayers for Carlo’s intercession.</li>
                     </ul>
                   </li>
                   <li><span className="font-semibold">Second Miracle (2022):</span>
                     <ul className="list-disc pl-5">
-                      <li>Costa Rican girl recovered after prayers at his tomb.</li>
+                      <li>A Costa Rican girl made a full recovery from a traumatic brain injury after her mother prayed at Carlo’s tomb for healing.</li>
                     </ul>
                   </li>
                   <li><span className="font-semibold">Canonization:</span>
