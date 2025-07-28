@@ -3,6 +3,7 @@ name: Keep Supabase Awake
 on:
   schedule:
     - cron: '0 3 * * 0' # Every Sunday at 3:00 UTC
+  workflow_dispatch:
 
 jobs:
   ping:
