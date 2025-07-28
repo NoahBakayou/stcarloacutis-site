@@ -11,9 +11,7 @@ export default function Home() {
       // Dynamically import Cesium to avoid SSR issues
       import("cesium").then((Cesium) => {
         (window as any).CESIUM_BASE_URL = "/cesium";
-        // Debug log to verify env variable is loaded
-        console.log("Cesium token:", process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN);
-        Cesium.Ion.defaultAccessToken = process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN as string;
+        Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2ZTU0NTdmYi04MDQ1LTQ5YmEtODMyYi02YTBiZTVhZGRlZmYiLCJpZCI6MzA2NjkzLCJpYXQiOjE3NDgzNDA5MTJ9.0FzQ2Mbf2NchF8mvwIirtWayp2HgH4nVgk3l8HcPX8w";
         // Clean up previous viewer if any
         if ((window as any).__CESIUM_VIEWER__ && typeof (window as any).__CESIUM_VIEWER__.destroy === "function") {
           (window as any).__CESIUM_VIEWER__.destroy();
@@ -34,8 +32,6 @@ export default function Home() {
         viewer.scene.backgroundColor = Cesium.Color.fromCssColorString("#f3f4f6");
         viewer.scene.skyBox.show = false;
         viewer.scene.skyAtmosphere.show = false;
-        viewer.scene.sun.show = false;
-        viewer.scene.moon.show = false;
         (window as any).__CESIUM_VIEWER__ = viewer;
         // Set initial camera view: more zoomed in on mobile, desktop unchanged
         if (window.innerWidth < 768) { // Tailwind's md breakpoint
@@ -297,18 +293,11 @@ export default function Home() {
         </div>
         {/* Mobile: single-line instructions */}
         <div className="block sm:hidden text-center mb-4">
-          <h2 className="text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Eucharistic Miracles Worldwide
-          </h2>
-          <div className="text-gray-600 text-base mb-2">
-            St. Carlo Acutis built a website to share Eucharistic miracles. Tap a marker to open his site.
-          </div>
+          <h2 className="text-2xl font-bold mb-2 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Eucharistic Miracles Worldwide</h2>
+          <div className="text-gray-600 text-base mb-2">Carlo Acutis built a website to share Eucharistic miracles. Tap a marker to open his site.</div>
         </div>
         <div className="w-full max-w-5xl h-56 md:h-96 bg-gray-100 border border-gray-200 flex items-center justify-center mb-4 rounded-xl overflow-hidden">
           <div id="cesiumContainer" className="w-full h-full rounded-xl" style={{ minHeight: 224 }}></div>
-        </div>
-        <div className="block sm:hidden text-gray-400 text-sm text-center mb-2">
-          Swipe, pinch to zoom, or rotate the globe to explore.
         </div>
       </section>
 
@@ -317,41 +306,11 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>Prayer Intentions</h2>
         <div className="flex flex-col md:flex-row items-start justify-center gap-1 w-full">
           <div className="max-w-lg min-w-[400px] w-full ml-[-4]">
-            <form
-              className="w-full max-w-md flex flex-col gap-4 bg-gray-50 border border-gray-200 p-6"
-              style={{ borderRadius: 12 }}
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const form = e.target as HTMLFormElement;
-                const data = {
-                  name: (form.elements.namedItem("name") as HTMLInputElement)?.value,
-                  email: (form.elements.namedItem("email") as HTMLInputElement)?.value,
-                  intention: (form.elements.namedItem("intention") as HTMLTextAreaElement)?.value,
-                };
-                const res = await fetch("/api/prayer-intention", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(data),
-                });
-                if (res.ok) {
-                  alert("Thank you for your prayer intention!");
-                  form.reset();
-                } else {
-                  alert("There was an error. Please try again.");
-                }
-              }}
-            >
+            <form className="w-full max-w-md flex flex-col gap-4 bg-gray-50 border border-gray-200 p-6" style={{ borderRadius: 12 }}>
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name (optional)"
-                className="px-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none"
-                autoComplete="off"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email (optional)"
                 className="px-4 py-2 border border-gray-300 focus:ring-2 focus:ring-blue-200 outline-none"
                 autoComplete="off"
               />
@@ -367,11 +326,11 @@ export default function Home() {
             </form>
           </div>
           <div className="max-w-lg min-w-[400px] w-full mr-[-4] aspect-video bg-gray-100 border border-gray-200 rounded-xl overflow-hidden flex flex-col items-center justify-center">
-            <div className="w-full text-center text-gray-600 text-sm font-medium mb-2">Live Stream of St. Carlo Acutis' Tomb</div>
+            <div className="w-full text-center text-gray-600 text-sm font-medium mb-2">Live Stream of St Carlo Acutis' Tomb</div>
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/watch?v=Q2jVG3YEXz8"
+              src="https://www.youtube.com/embed/k0_3FFmsWwc?autoplay=1&mute=1"
               title="Live Stream Carlo Acutis Tomb"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -381,6 +340,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
   );
 }
