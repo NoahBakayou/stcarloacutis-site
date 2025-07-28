@@ -403,7 +403,7 @@ export default function Home() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/Q2jVG3YEXz8?autoplay=1"
+              src="https://www.youtube.com/embed/Q2jVG3YEXz8?autoplay=1&mute=1"
               title="Live Stream Carlo Acutis Tomb"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
