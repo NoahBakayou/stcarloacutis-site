@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Send dummy prayer intention
         run: |
-          curl -X POST "https://stcarloacutis.net/api/prayer-intention" \
+          curl -L -X POST "https://stcarloacutis.net/api/prayer-intention" \
             -H "Content-Type: application/json" \
-            -d '{"name":"KeepAliveBot","email":"bot@example.com","intention":"This is a keep-alive ping to prevent Supabase Database from sleeping."}' 
+            -d '{"name":"KeepAliveBot","email":"bot@example.com","intention":"This is a keep-alive ping to prevent Supabase Database from sleeping."}'
