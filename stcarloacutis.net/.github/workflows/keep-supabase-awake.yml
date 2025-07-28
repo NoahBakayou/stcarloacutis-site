@@ -1,0 +1,15 @@
+name: Keep Supabase Awake
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # Every Sunday at 3:00 UTC
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send dummy prayer intention
+        run: |
+          curl -X POST "https://stcarloacutis.net/api/prayer-intention" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"KeepAliveBot","email":"bot@example.com","intention":"This is a keep-alive ping to prevent Supabase Database from sleeping."}' 
